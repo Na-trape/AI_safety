@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bias Detection Interface</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/static/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Bias Detection Interface</h1>
+        
+        <!-- Input Section -->
+        <div class="card">
+            <h2 class="subtitle">Enter Your Prompt</h2>
+            <textarea id="promptInput" 
+                      class="textarea"
+                      placeholder="Enter your prompt here... (Press Ctrl+Enter to generate)"></textarea>
+            <div class="button-container">
+                <button onclick="generateResponse()" class="button button-primary">
+                    Generate Response
+                    <div id="generateLoading" class="loading"></div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Response Section -->
+        <div class="card">
+            <h2 class="subtitle">Model Response</h2>
+            <div id="responseOutput" class="output-container"></div>
+            <div class="button-container">
+                <button onclick="evaluateBias()" class="button button-success">
+                    Evaluate Bias
+                    <div id="evaluateLoading" class="loading"></div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Evaluation Section -->
+        <div class="card">
+            <h2 class="subtitle">Bias Evaluation</h2>
+            <div id="evaluationOutput" class="output-container"></div>
+        </div>
+
+        <!-- History Section -->
+        <div class="card">
+            <h2 class="subtitle">Interaction History</h2>
+            <div id="historyContainer"></div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html> 
